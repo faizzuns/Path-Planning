@@ -23,8 +23,10 @@ public class Graph {
             Node first = getNode(firstNode);
             Node second = getNode(secondNode);
             listEdge.add(new Edge(first, second, value));
+            first.addAdj(second);
             if (twoWays){
                 listEdge.add(new Edge(second, first, value));
+                second.addAdj(first);
             }
             return true;
         }else{
